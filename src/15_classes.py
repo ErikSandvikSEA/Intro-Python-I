@@ -7,6 +7,7 @@ class LatLon:
         self.lat = lat
         self.lon = lon
 
+
 sample = LatLon(2, 4)
 print(sample.lat, sample.lon)
 # Make a class Waypoint that can be passed parameters `name`, `lat`, and `lon` to the
@@ -17,10 +18,12 @@ class Waypoint(LatLon):
     def __init__(self, name, lat, lon):
         super().__init__(lat, lon)
         self.name = name
-    def __str__(self):
-        return f"{self.name} {self.lat} {self.lon}"
 
-waypointSample = Waypoint('Tokyo', 22, 33)
+    def __str__(self):
+        return f"Waypoint: {self.name}, lat: {self.lat}, lon: {self.lon}"
+
+
+waypointSample = Waypoint("Tokyo", 22, 33)
 print(waypointSample.name, waypointSample.lat, waypointSample.lon)
 # Make a class Geocache that can be passed parameters `name`, `difficulty`,
 # `size`, `lat`, and `lon` to the constructor. What should it inherit from?
@@ -33,20 +36,26 @@ class Geocache(Waypoint):
         self.size = size
 
     def __str__(self):
-        return f"{self.name} {self.difficulty} {self.size} {self.lat} {self.lon}"
+        return f"Waypoint: {self.name}, difficulty: {self.difficulty}, size: {self.size}, lat: {self.lat}, lon: {self.lon}"
 
-Geocache_sample = Geocache('WA', 'Hard', 'Large', 22, 23)
-print(Geocache_sample.name, Geocache_sample.difficulty, Geocache_sample.size, Geocache_sample.lat, Geocache_sample.lon )
+
+Geocache_sample = Geocache("WA", "Hard", "Large", 22, 23)
+print(
+    Geocache_sample.name,
+    Geocache_sample.difficulty,
+    Geocache_sample.size,
+    Geocache_sample.lat,
+    Geocache_sample.lon,
+)
 # Make a new waypoint and print it out: "Catacombs", 41.70505, -121.51521
 
 # YOUR CODE HERE
-catacombs = Waypoint('Catacombs', 41.70505, -121.51521)
+catacombs = Waypoint("Catacombs", 41.70505, -121.51521)
 print(catacombs)
 
 # Without changing the following line, how can you make it print into something
 # more human-readable? Hint: Look up the `object.__str__` method
 # print(waypoint)
-
 
 
 # Make a new geocache "Newberry Views", dfiff 1.5, size 2, 44.052137, -121.41556

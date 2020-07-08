@@ -16,30 +16,14 @@ has the following keys:
 """
 
 waypoints = [
-    {
-        "lat": 43,
-        "lon": -121,
-        "name": "a place"
-    },
-    {
-        "lat": 41,
-        "lon": -123,
-        "name": "another place"
-    },
-    {
-        "lat": 43,
-        "lon": -122,
-        "name": "a third place"
-    }
+    {"lat": 43, "lon": -121, "name": "a place"},
+    {"lat": 41, "lon": -123, "name": "another place"},
+    {"lat": 43, "lon": -122, "name": "a third place"},
 ]
 
 # Add a new waypoint to the list
 # YOUR CODE HERE
-waypoints.append({
-    "lat": 35,
-    "lon": 139,
-    "name": "Tokyo Dome"
-})
+waypoints.append({"lat": 35, "lon": 139, "name": "Tokyo Dome"})
 
 print(waypoints)
 
@@ -61,3 +45,6 @@ print(waypoints[0])
 for waypoint in waypoints:
     for key, value in waypoint.items():
         print(f"Key is {key}, Value is {value}")
+
+for waypoint in waypoints:
+    print(waypoint)

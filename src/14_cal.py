@@ -31,19 +31,29 @@ import sys
 import calendar
 from datetime import datetime
 
+num_args = len(sys.argv)
+
+cal = calendar.TextCalendar()
+
 
 def calendar_proj(*args):
-  if len(sys.argv) == 1:
-    print(f"Current Date/Time: {datetime.now()}")
-  elif len(sys.argv) == 2:
-    print(calendar.month(2020, int(sys.argv[1])))
-  elif len(sys.argv) == 3:
-    print(calendar.month(int(sys.argv[2]), int(sys.argv[1])))
+    if num_args == 1:
+        month = datetime.now().month
+        year = datetime.now().year
 
-  else:
-    print('Reformat using mm/yyyy format')
+    elif num_args == 2:
+        year = datetime.now().year
+        month = int(sys.argv[1])
 
+    elif len(sys.argv) == 3:
+        month = int(sys.argv[1])
+        year = int(sys.argv[2])
 
+    else:
+        print("Reformat using mm/yyyy format")
+        sys.exit(1)
+
+    cal.prmonth(year, month)
 
 
 calendar_proj()
