@@ -36,7 +36,7 @@ class Geocache(Waypoint):
         self.size = size
 
     def __str__(self):
-        return f"Waypoint: {self.name}, difficulty: {self.difficulty}, size: {self.size}, lat: {self.lat}, lon: {self.lon}"
+        return f"Geocache: {self.name}, difficulty: {self.difficulty}, size: {self.size}, lat: {self.lat}, lon: {self.lon}"
 
 
 Geocache_sample = Geocache("WA", "Hard", "Large", 22, 23)
